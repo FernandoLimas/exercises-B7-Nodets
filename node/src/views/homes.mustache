@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title> Página de inicio </title>
+  </head>
+
+  <body>
+    <h1> Bem vindo a página de início </h1>
+    <p>
+      {{#showOld }} <!--condicional que mostra o texto se a variável showOld for verdadeira-->
+        <a> Show age: {{age}} </a>
+      {{/showOld}}
+      {{^showOld}} <!-- else showOld for false -->
+        Idade abaixo de 51
+      {{/showOld}}
+    </p>
+       <hr/>
+    <p>
+      {{#showMe}} <!-- condicional mustache true ou false -->
+        <a> Bem vindo, {{ user.name }} {{ user2 }} </a>
+      {{/showMe}}
+    </p>
+      <hr/>
+    
+    <h2> Lista de produtos </h2>
+    <ul>
+    {{#products}} <!-- loop( exibindo listas) array products -->
+      <li> {{title}} - R$ {{price}} </li>
+    {{/products}}
+    </ul>
+      <hr>
+
+    <h2> Lista Simples </h2>
+    <ul>
+      {{#listaSimples}} <!-- loop( exibindo listas) array listaSimples "{{.}}"-->
+        <li> {{.}} </li>
+      {{/listaSimples}}
+
+      {{^listaSimples}} <!-- else de listas -->
+        Não há listas hoje...
+      {{/listaSimples}}
+  </body>
+</html>

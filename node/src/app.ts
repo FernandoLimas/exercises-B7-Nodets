@@ -11,10 +11,10 @@
 // 11- intalando o mustache: npm install mustache-express -D
 // 12- instalar types do mustache: npm install @types/mustache-express
 
-import express, { Request, Response} from 'express';
-import router from './routes/index';
+import express, { Request, Response, NextFunction } from 'express';
 import path from 'path';
 import mustache from 'mustache-express';
+import router from './routes/index';
 
 const server = express();
 
@@ -22,22 +22,68 @@ server.set('view engine', 'mustache');
 server.set('views', path.join(__dirname, 'views'));
 server.engine('mustache', mustache());
 
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, '../public')));
 
-server.get('/', (req: Request, res: Response) => {
-  res.status(200).send('HOME')
-})
+// ---função de middleware---
+// var myLogger = function (req: Request, res: Response, next: NextFunction) {
+//   console.log('LOGGED');
+//   next();
+// };
 
-// separando rotas
+// server.use(myLogger);
+
+// ---separando rotas---
 server.use('/rout', router);
 
-// erro 404
+server.get('/', (req: Request, res: Response) => {
+  let age: number = 60;
+  let showOld: boolean = false;
+
+  if(age > 50) {
+    showOld = true;
+  };
+
+  let user = {
+    name: 'Fernando',
+  };
+
+  res.render('homes', {
+    user,
+    showMe: true,
+    age,
+    showOld,
+    products: [
+      {title: 'Coca', price: 12},
+      {title: 'Picanha', price: 100},
+      {title: 'Vinho', price: 80},
+    ],
+    listaSimples: [
+      'Maria',
+      'Santos',
+      'Fabiana',
+    ] 
+  });
+});
+
+// ---req.query---
+server.get('/nome', (req: Request, res: Response) => {
+  
+  let nome: string = req.query.nome as string;
+  res.render('nome', {
+    nome
+  });
+});
+// ---
+
+server.get('/contato', (req: Request, res: Response) => {
+  res.render('contato');
+});
+
+// ---erro 404---
 server.use((req: Request, res: Response) => {
   res.status(404).send('Página não encontrada')
-})
+});
 
 server.listen(3000, () => {
   console.log('Server is running on port 3000');
 } );
-
-

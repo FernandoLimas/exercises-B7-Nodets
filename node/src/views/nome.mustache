@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title> Página de início </title>
+  </head>
+
+  <body>
+    <h1> Bem vindo a página de nome </h1>
+
+    <hr>
+    <form method="GET">
+      <input type="text" name="nome" placeholder="Digite seu nome">
+      <input type="submit" value="Enviar">
+    <hr>
+      {{#nome}}
+      <h1> Olá {{nome}} </h1>
+      {{/nome}}
+    
+  </body>
+</html>
