@@ -22,7 +22,11 @@ Opa {{name}} {{lastName}}, tudo bem?
 <h2>Lista de usuários do banco de dados</h2>
     <ul>
         {{#users}}
-            <li>Nome: {{name}} - Idade: {{age}}</li>
+            <li>Nome: {{name}} - Idade: {{age}} 
+                <a href="/usuario/{{id}}/add">+</a>
+                <a href="/usuario/{{id}}/dec">-</a>
+                <a href="/usuario/{{id}}/del">x</a>
+            </li>
         {{/users}}
     </ul>
 <hr/>

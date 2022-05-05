@@ -61,7 +61,7 @@ export const home = async (req: Request, res: Response)=>{
         }
     }
     });
-    // ---2 Deleta um usuário primeiro friltando---destroy
+    // ---2 Deleta um usuário primeiro filtrando---destroy
     // let results = await User.findAll({
     //     where: { id: 1}
     // })
