@@ -24,6 +24,7 @@
     "@types/node": "^16.6.1",
     "@types/sequelize": "^4.28.10",
     "@types/validator": "^13.6.3",
+    "mysql2": "^2.3.3",
     "ts-node": "^10.7.0"
   }
 }

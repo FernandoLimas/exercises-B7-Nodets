@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import path from 'path';
 import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
+import router from './routes/fhrases'
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ server.get('/ping', (req: Request, res: Response) => {
     res.status(200);
     res.json('pong');
 })
+
+server.use(router);
 
 server.use((req: Request, res: Response) => {
     res.status(404);
