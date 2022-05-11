@@ -26,7 +26,7 @@ export const register = async (req: Request, res: Response) => {
 
   if(!hasUser) {
       const newUser = await User.create({email, password});
-
+  // Gera o token depois que o usuário for CRIADO
         const token = JWT.sign(
           { id: newUser.id, email: newUser.email },
           process.env.JWT_SECRET_KEY as string,
@@ -50,6 +50,7 @@ export const login = async (req: Request, res: Response) => {
     let user = await User.findOne({where: { email, password }});
 
     if(user) {
+  // Gera o token depois que o usuário for ENCONTRADO.
       const token = JWT.sign(
         { id: user.id, email: user.email },
         process.env.JWT_SECRET_KEY as string,
