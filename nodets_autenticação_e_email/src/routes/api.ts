@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { Auth } from '../middlewares/auth';
 
 import * as ApiController from '../controllers/apiController';
 
@@ -14,6 +15,6 @@ router.post('/login', ApiController.login);
 
 router.delete('/users/:id', ApiController.destroy);
 
-router.get('/list', ApiController.list);
+router.get('/list', Auth.private, ApiController.list);
 
 export default router;
