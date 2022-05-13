@@ -1,4 +1,4 @@
-import { Math } from './Math';
+/* import { Math } from './Math';
 
 describe('Testing Math', () => {
 
@@ -21,7 +21,7 @@ describe('Testing Math', () => {
     const response = Math.sub(5,2);
     expect(response).toBe(3);
   })
-});
+}); */
 
 /* LIFECYCLE PARA TESTES:
 beforeAll() / beforeEach() / afterAll() /afterEach() */
