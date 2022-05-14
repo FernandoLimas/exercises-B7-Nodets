@@ -5,4 +5,5 @@
 ### MySQL
 ### Express
 ### Sequelize
-### Mustache 
+### Mustache
+### JWT
