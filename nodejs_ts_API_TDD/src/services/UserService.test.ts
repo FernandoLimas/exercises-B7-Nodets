@@ -11,7 +11,7 @@ describe('Testing Service', () => {
   const email = 'test@jest.com';
   const password = '123';
 
-  describe('1-The user was create.', () => {
+  describe('1-The user was created.', () => {
   
     it('1) Should create a new user.', async () => {
       const newUser = await UserService.createUser(email, password) as UserInstance; // assertion
@@ -70,5 +70,17 @@ describe('Testing Service', () => {
     });
 
   });
+
+  describe('5-Get list of users by email', () => {
+    it('1) All list', async ()=> {
+      const usersEmail = await UserService.allUsers();
+      expect(usersEmail.length).toBeGreaterThanOrEqual(1);
+
+      // Verifica se realmente é uma lista de usuários da instância de User
+      for(let i in usersEmail) {
+        expect(usersEmail[i]).toBeInstanceOf(User)
+      }
+    })
+  })
 
 });
