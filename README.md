@@ -1,1 +1,9 @@
-# exercises-B7-Nodets
+# exercises 
+
+### Node.js  
+### Typescript
+### MySQL
+### Express
+### Sequelize
+### Mustache
+### JWT
