@@ -1,7 +1,7 @@
 import * as UserService from './UserService';
 import { User, UserInstance } from '../models/User'
 
-describe('Testing Service', () => {
+describe.skip('Testing Service', () => {
 
   // Antes de começar a criar os testes é preciso popular o banco de dados de testes.
   beforeAll( async () => {
