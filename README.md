@@ -1,4 +1,4 @@
-# exercises 
+# EXERCISES 
 
 ### Node.js  
 ### Typescript
