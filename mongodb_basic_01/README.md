@@ -10,4 +10,7 @@
 `npm run start-dev`
 
 ---
-* NoSQL = Banco de dados NÃO RELACIONAL.
+>NoSQL = Banco de dados NÃO RELACIONAL.
+
+### Conexão com o banco de dados:
+* `MONGO_URL=mongodb://localhost:27017/nomeDoBanco`
