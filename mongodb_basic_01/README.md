@@ -1,3 +1,13 @@
 # MongoDB
 
-## NoSQL = Banco de dados NÃO RELACIONAL. (não tem relacionamento direto entre um dado com outro.)
+### Pré-requisitos globais:
+`npm i -g nodemon typescript ts-node`
+
+### Instalação
+`npm install`
+
+### Para rodar o projeto
+`npm run start-dev`
+
+---
+* NoSQL = Banco de dados NÃO RELACIONAL.
